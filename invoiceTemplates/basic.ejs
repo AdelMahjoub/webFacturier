@@ -547,29 +547,27 @@
     <!-- INVOICE ITEMS -->
     <div id="items">
       <table>
-        <thead>
-          <tr>
-            <% if(invoice.options.detailed) { %>
-            <th>Qté</th>
-            <% } %>
-            <th>Désignation</th>
-            <th class="hasTextAlignRight">
-              <%= invoice.options.detailed ? 'Prix Unit ' : 'Prix ' %>
-              <%= invoice.options.withTaxes ? 'HT' : '' %>
-              &euro;
-            </th>
-            <% if(invoice.options.detailed) { %>
-            <th class="hasTextAlignRight">
-              Montant
-              <%= invoice.options.withTaxes ? ' HT ': ' ' %>
-              &euro;
-            </th>
-            <% } %>
-            <% if(invoice.options.withTaxes) { %>
-            <th class="hasTextAlignRight">TVA &percnt;</th>
-            <% } %>
-          </tr>
-        </thead>
+        <tr>
+          <% if(invoice.options.detailed) { %>
+          <th>Qté</th>
+          <% } %>
+          <th>Désignation</th>
+          <th class="hasTextAlignRight">
+            <%= invoice.options.detailed ? 'Prix Unit ' : 'Prix ' %>
+            <%= invoice.options.withTaxes ? 'HT' : '' %>
+            &euro;
+          </th>
+          <% if(invoice.options.detailed) { %>
+          <th class="hasTextAlignRight">
+            Montant
+            <%= invoice.options.withTaxes ? ' HT ': ' ' %>
+            &euro;
+          </th>
+          <% } %>
+          <% if(invoice.options.withTaxes) { %>
+          <th class="hasTextAlignRight">TVA &percnt;</th>
+          <% } %>
+        </tr>
         <tbody>
           <% invoice.items.forEach(function(item) { %>
           <tr>
